@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.reveal section img {
+    border: 0;
+    box-shadow: none;
+}
+
+.reveal {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  font-size: 38px;
+  font-weight: normal;
+  color: #fff; }
+
+/*********************************************
+ * HEADERS
+ *********************************************/
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #fff;
+  font-family: "Bree Serif", Helvetica, sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: unset;
+  text-transform: none;
+  text-shadow: none;
+  word-wrap: break-word; }
+
+.reveal h2 {
+  font-size: 1.4em;
+}
