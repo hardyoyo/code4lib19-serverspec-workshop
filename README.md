@@ -31,7 +31,7 @@ Vagrant has a robust community of plugin developers, and some of the plugins are
 
 > #### TLDR, just tell me what to install...
 >
-> ... OK, fine, run this command to install a the two plugins we MUST have to follow along with this workshop:
+> ... OK, fine, run this command to install the two plugins we MUST have to follow along with this workshop:
 >
 > `vagrant plugin install vagrant-env vagrant-spec`
 

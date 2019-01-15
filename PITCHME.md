@@ -15,7 +15,9 @@ Hi, welcome, thanks for coming.
 ---
 # Agenda
 * 1/2 hour: Intro to ServerSpec
-* 2 hours: hands on with ServerSpec
+* 1/2 hour: Types of Tests
+* 1/2 hour: Additional Concepts
+* 1 hour: hands on with ServerSpec in Vagrant
 * 1/2 hour: questions and discussion
 
 Note:
@@ -31,6 +33,11 @@ More speaker notes here.
 
 Note:
 More spearker notes here.
+
+---?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=auto
+
+Note:
+So, here's a story I read a while back, maybe it'll sound familiar? You come in at a new job, you have the initial “Hey newbie, here’s your new network. You have web machines, databases, app servers, caching servers, configuration management and other boxes. We have process monitoring ...em... nagios... heh... and yes we have configuration management where you have to do code reviews to get anything out to production.” As a newbie I’m excited *this is great* but here comes the kicker. Your  trainer continues, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www1 through www9, and one called paco.” You quickly grab a piece of paper, “Paco?”, “Yes the admin before you didn’t like standard names, he wanted to give machines ‘personality’, and we had a change after him, so we have that one off.”
 
 ---
 # Why write ServerSpec tests?
@@ -50,7 +57,7 @@ More spearker notes here.
 * Is a great way to get to know your existing services
 
 Note:
-It's this last bullet that I want to focus on for this workshop. TDD is cool and all... but, today, let's focus on just figuring out what we have, and what this tool can do.
+It's this last bullet that I want to focus on for this workshop. TDD is cool and we will do a bit of it today, but I will try to keep the focus on helping you figure out what you have, and what this tool can do.
 
 ---
 # Installing ServerSpec
@@ -65,20 +72,18 @@ Note:
 Sudo: I will point out areas where things may get a little dicey if your test logs in as a normal user. It all works, but you have to adjust some tests for unprivileged users.
 
 ---
-# Vagrant to the rescue!
+# TDD Time!
 * today we will use a Vagrant image for a victim
 * we will use the vagrant-spec plugin for Vagrant
 
----?image=assets/images/GermanSubmarineControlRoom1918.jpg&size=auto
 
-Note:
-More speaker notes here. This is an example of an image-only slide.
 
 ---
 # Thanks! Questsions?
 
 Slides: [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
-Image Credits:
+Credits:
 
+Story of the newbie:
 Note:
 Thanks for coming! Any questions?
