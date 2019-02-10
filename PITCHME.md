@@ -56,7 +56,7 @@ on creating new things and more on figuring out what has already been built.
 * ServerSpec
 * DockerSpec
 * SpecInfra
-¯\\_(ツ)_/¯
+* ¯\\_(ツ)_/¯
 Note:
 Details to follow, but there are a bunch of related and interdependent tools
 This is the way the Ruby ecosystem works: developers keep leveraging other work
