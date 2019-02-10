@@ -120,10 +120,10 @@ describe file(/etc/httpd/conf/httpd.conf) do
 end
 ```
 @[1](spec_helper)
-@[2-4](packages resource)
-@[6-9](services resource)
-@[11-13](ports resource)
-@[15-18](files resource)
+@[2-4](package resource)
+@[6-9](service resource)
+@[11-13](port resource)
+@[15-18](file resource)
 
 Note:
 If you've worked with Rails before, you've seen a "helper", it's a way to pull
