@@ -52,7 +52,7 @@ out ways you can incorporate TDD to learn ServerSpec. But, the focus will be les
 on creating new things and more on figuring out what has already been built.
 
 ---
-# Software Reuse ¯\_(ツ)_/¯
+# Software Reuse ¯\\_(ツ)_/¯
 * ServerSpec
 * DockerSpec
 * SpecInfra
