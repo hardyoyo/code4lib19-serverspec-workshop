@@ -34,3 +34,14 @@
 .reveal h2 {
   font-size: 1.4em;
 }
+
+/**
+ * Fix the Footer so we can see it
+*/
+#title-footer p.footer-fade {
+  color: #bbb;
+  opacity: 0.9;
+  font-size: 1.5vh;
+  letter-spacing: 0;
+  margin-top: -10px;
+}
