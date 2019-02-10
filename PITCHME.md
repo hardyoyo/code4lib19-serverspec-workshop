@@ -143,6 +143,9 @@ https://serverspec.org/resource_types.html
 * cron
 
 ---
+# how do we run the tests?
+
+---
 # scaling up to more than one server
 
 ---
