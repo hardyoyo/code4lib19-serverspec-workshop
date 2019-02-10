@@ -1,5 +1,4 @@
 # Wait, what? Getting your bearings with ServerSpec
-## Preconference Workshop, Code4Lib 2019, San Jose, CA
 
 Hardy Pottinger
 
