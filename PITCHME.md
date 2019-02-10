@@ -52,15 +52,17 @@ out ways you can incorporate TDD to learn ServerSpec. But, the focus will be les
 on creating new things and more on figuring out what has already been built.
 
 ---
-# Software Reuse
+# Software Reuse, spec spec spec...
+* RSpec
 * ServerSpec
 * DockerSpec
 * SpecInfra
 * ¯\\_(ツ)_/¯
 Note:
-Details to follow, but there are a bunch of related and interdependent tools
-This is the way the Ruby ecosystem works: developers keep leveraging other work
-to do new things.
+Just to give you a heads up, you'll hear me mention a few different words with
+"spec" in them, I will eventually show you a nice image that explains how most
+of them interrelate, however, it's way too much detail right now. Just trust me,
+this is normal Ruby stuff. Basic software reuse. Cool?
 
 ---
 # Installing ServerSpec
