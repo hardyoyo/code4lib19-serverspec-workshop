@@ -97,7 +97,7 @@ Input target host name: waitwat
  + Rakefile
  + .rspec
 ```
-@[14]
+@[14](let's look at this sample_spec.rb)
 ---
 ```
 require 'spec_helper'
@@ -119,12 +119,18 @@ describe file(/etc/httpd/conf/httpd.conf) do
   it {should contain "ServerName my-server-name"}
 end
 ```
-@[1] spec_helper
-@[2-4] packages
-@[6-9] services
-@[11-13] ports
-@[15-18] files
+@[1](spec_helper)
+@[2-4](packages resource)
+@[6-9](services resource)
+@[11-13](ports resource)
+@[15-18](files resource)
 
+Note:
+If you've worked with Rails before, you've seen a "helper", it's a way to pull
+out some complexity to improve the readability of your code. For ServerSpec,
+it helps improve the readability of your tests. The gist is: don't forget about
+this file... you'll probably need to dig into it to make things work. But we will
+skip it for now. Instead, let's look at all the other pieces we get.
 ---
 # Resources
 https://serverspec.org/resource_types.html
