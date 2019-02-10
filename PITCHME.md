@@ -68,8 +68,10 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 ---
 # Installing ServerSpec
 * It’s a Ruby gem, you’ll need Ruby 2.0.x+ installed
+
 `sudo gem install serverspec`
 * You will need Rake installed, too:
+
 `sudo gem install rake`
 * You will need SSH access to the servers you want to check
 * You will **not** need Sudo on these servers, though Sudo does make things slightly easier
