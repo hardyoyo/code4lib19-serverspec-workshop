@@ -12,17 +12,6 @@ Note:
 Hi, welcome, thanks for coming.
 
 ---
-# Agenda
-* 1/2 hour: Intro to ServerSpec
-* 1/2 hour: Types of Tests
-* 1/2 hour: Additional Concepts
-* 1 hour: hands on with ServerSpec in Vagrant
-* 1/2 hour: questions and discussion
-
-Note:
-More speaker notes here.
-
----
 # We are constantly learning more about our environment
 * Developers shop jobs a lot
 * Have you seen the mailing lists?
@@ -63,12 +52,13 @@ out ways you can incorporate TDD to learn ServerSpec. But, the focus will be les
 on creating new things and more on figuring out what has already been built.
 
 ---
-# ServerSpec has friends
-* DockerSpec builds on ServerSpec to focus on Docker containers
-* This normal for Ruby projects
-* Details will follow
-
+# Software Reuse
+* ServerSpec
+* DockerSpec
+* SpecInfra
+¯\_(ツ)_/¯
 Note:
+Details to follow, but there are a bunch of related and interdependent tools
 This is the way the Ruby ecosystem works: developers keep leveraging other work
 to do new things.
 
@@ -151,7 +141,7 @@ https://serverspec.org/resource_types.html
 
 ---
 ![ServerSpec Components](assets/images/serverspec_components.jpg)
-ServerSpec Components, adapted from "Introduction to Test-Driven Docker Development," by Peter Roßbach,  Wednesday, August 12, 2015, Entwickler.de
+ServerSpec Components, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
 
 ---
 # gotchas
@@ -170,5 +160,6 @@ Slides: [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/
 Credits:
 
 Story of the newbie:
+https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
 Note:
 Thanks for coming! Any questions?
