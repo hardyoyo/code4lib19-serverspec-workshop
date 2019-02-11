@@ -17,7 +17,7 @@ Hi, welcome, thanks for coming.
 * Have you seen the mailing lists?
 * We change jobs a lot
 * Our jobs change a lot all on their own
-* @color[green](We are always the newbie)
+* `@color[green](We are always the newbie)`
 
 Note:
 More spearker notes here.
