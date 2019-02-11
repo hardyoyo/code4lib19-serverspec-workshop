@@ -209,7 +209,7 @@ your tests.
 * Written in Ruby
 
 ---
-# sharing code between tests
+# sharing code
 https://serverspec.org/advanced_tips.html
 https://tinyurl.com/uclalibrary-serverspec-samvera
 
