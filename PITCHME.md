@@ -30,14 +30,18 @@ So, here's a story I read a while back, maybe it'll sound familiar? You come in 
 
 ---
 # Why write tests?
-## with ServerSpec or any similar tool?
+## With ServerSpec or any similar tool?
 * Tests are documentation
 * Your team may or may not survive
 * Provisioning tools come and go
 * No matter what happens to the tools or your team, these tests will persist as documentation of your intentions and proof that the service is configured as you expected
 
 Note:
-More spearker notes here.
+ServerSpec is one tool for for testing infrastructure, it's not the only option,
+but it's common enough that if you're looking to write an infrastructure test
+you should consider using it.
+
+What is Serverspec?
 
 ---
 # ServerSpec
@@ -61,7 +65,7 @@ on creating new things and more on figuring out what has already been built.
 * ¯\\_(ツ)_/¯
 Note:
 Just to give you a heads up, you'll hear me mention a few different words with
-"spec" in them, I will eventually show you a nice image that explains how most
+"spec" in them, I will eventually show you an image that explains how most
 of them interrelate, however, it's way too much detail right now. Just trust me,
 this is normal Ruby stuff. Basic software reuse. Cool?
 
@@ -76,6 +80,7 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 
 Note:
 Sudo: I will point out areas where things may get a little dicey if your test logs in as a normal user. It all works, but you have to adjust some tests for unprivileged users.
+After you install ServerSpec, you can start off with the serverspec-init command.
 
 ---
 ```
@@ -144,12 +149,62 @@ https://serverspec.org/resource_types.html
 
 ---
 # how do we run the tests?
+* the customary folder for RSpec-based tests is `spec`
+* calling ServerSpec is exactly the same as any other RSpec test
+
+`bundle exec rspec spec`
+
+or just
+
+`rspec spec`
+
+* this will run all the tests in the spec folder.
+
+---
+# live demo
+https://tinyurl.com/uclalibrary-serverspec-samvera
 
 ---
 # scaling up to more than one server
+https://tinyurl.com/uclalibrary-serverspec-samvera
 
 ---
 # spec_helper
+```
+require 'serverspec'
+require 'pathname'
+require 'net/ssh'
+require 'yaml'
+
+base_spec_dir = Pathname.new(File.join(File.dirname(__FILE__)))
+
+Dir[base_spec_dir.join('shared/**/*.rb')].sort.each{ |f| require f }
+
+set :backend, :ssh
+set :disable_sudo, true
+
+set :path, '/usr/sbin:$PATH'
+
+properties = YAML.load_file(base_spec_dir.join('properties.yml'))
+
+options = Net::SSH::Config.for(host)
+options[:user] = 'deploy'
+host = ENV['TARGET_HOST']
+
+set :host,        options[:host_name] || host
+set :ssh_options, options
+
+set_property properties[host]
+```
+Note:
+The spec_helper file is a way to pull out some complexity to improve the
+readability of your code. For ServerSpec, it helps improve the readability of
+your tests.
+
+---
+# sharing code between tests
+https://serverspec.org/advanced_tips.html
+https://tinyurl.com/uclalibrary-serverspec-samvera
 
 ---
 ![ServerSpec Components](assets/images/serverspec_components.jpg)
@@ -157,7 +212,11 @@ ServerSpec Components, adapted from ["Introduction to Test-Driven Docker Develop
 
 ---
 # gotchas
-
+* you'll need to be sure the `ss` command is available on the test target
+  * this isntalled by default on RHEL
+  * for Ubuntu, you'll need to install the iproute2 package
+* you'll need to be sure `/usr/sbin` is in the path, if your test target is RHEL
+  * you can set the `:path` in spec_helper
 
 
 ---
