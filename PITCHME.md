@@ -202,7 +202,8 @@ readability of your code. For ServerSpec, it helps improve the readability of
 your tests.
 
 ---
-# Use a Rakefile to automate the running of complex tests
+# Use a Rakefile
+* automate the running of complex tests
 * Rake is a software task management and build automation tool
 * Similar to Make
 * Written in Ruby
