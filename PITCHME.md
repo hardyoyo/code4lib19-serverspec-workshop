@@ -159,10 +159,10 @@ or just
 `rspec spec`
 
 * this will run all the tests in the spec folder.
+* you can also use a Rakefile to automate more complex tests
 
----
-# live demo
-https://tinyurl.com/uclalibrary-serverspec-samvera
+
+---?terminal=sessions/serverspec_samvera_demo.cast&color=white&title=UCLALibrary/serverspec-samvera
 
 ---
 # scaling up to more than one server
@@ -202,6 +202,12 @@ readability of your code. For ServerSpec, it helps improve the readability of
 your tests.
 
 ---
+# Use a Rakefile to automate the running of complex tests
+* Rake is a software task management and build automation tool
+* Similar to Make
+* Written in Ruby
+
+---
 # sharing code between tests
 https://serverspec.org/advanced_tips.html
 https://tinyurl.com/uclalibrary-serverspec-samvera
@@ -221,7 +227,11 @@ ServerSpec Components, adapted from ["Introduction to Test-Driven Docker Develop
 
 ---
 # containers? Docker?
-Use DockerSpec
+* many options are available, worth researching
+* DockerSpec: https://github.com/zuazo/dockerspec
+
+---?terminal=sessions/docker-cantaloupe-demo.cast&color=white&title=UCLALibrary/docker-cantaloupe
+
 
 
 ---
