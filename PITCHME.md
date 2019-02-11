@@ -17,7 +17,7 @@ Hi, welcome, thanks for coming.
 * Have you seen the mailing lists?
 * We change jobs a lot
 * Our jobs change a lot all on their own
-* `@color[green](We are always the newbie)`
+* @color[green](We are always the newbie)
 
 Note:
 More spearker notes here.
@@ -148,7 +148,7 @@ https://serverspec.org/resource_types.html
 * cron
 
 ---
-# how do we run the tests?
+# run the tests
 * the customary folder for RSpec-based tests is `spec`
 * calling ServerSpec is exactly the same as any other RSpec test
 

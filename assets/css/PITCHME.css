@@ -46,8 +46,8 @@
   margin-top: -10px;
 }
 
-.reveal code {
+.just-code {
   font-family: monospace;
   text-transform: none;
-  color: #fff;
+  color: green;
 }
