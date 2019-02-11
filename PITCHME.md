@@ -17,7 +17,7 @@ Hi, welcome, thanks for coming.
 * Have you seen the mailing lists?
 * We change jobs a lot
 * Our jobs change a lot all on their own
-* @color[green](We are always the newbie)
+* @css[just-code](We are always the newbie)
 
 Note:
 More spearker notes here.
@@ -72,9 +72,9 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 ---
 # Installing ServerSpec
 * It’s a Ruby gem, you’ll need Ruby 2.0.x+ installed
-`sudo gem install serverspec`
+@css[just-code](sudo gem install serverspec)
 * You will need Rake installed, too:
-`sudo gem install rake`
+@css[just-code](sudo gem install rake)
 * You will need SSH access to the servers you want to check
 * You will **not** need Sudo on these servers, though Sudo does make things slightly easier
 
@@ -152,11 +152,11 @@ https://serverspec.org/resource_types.html
 * the customary folder for RSpec-based tests is `spec`
 * calling ServerSpec is exactly the same as any other RSpec test
 
-`bundle exec rspec spec`
+@css[just-code](bundle exec rspec spec)
 
 or just
 
-`rspec spec`
+@css[just-code](rspec spec)
 
 * this will run all the tests in the spec folder.
 * you can also use a Rakefile to automate more complex tests
