@@ -149,7 +149,7 @@ https://serverspec.org/resource_types.html
 
 ---
 # run the tests
-* the customary folder for RSpec-based tests is `spec`
+* RSpec tests usually go in a folder called @css[just_code](spec)
 * calling ServerSpec is exactly the same as any other RSpec test
 
 @css[just-code](bundle exec rspec spec)
