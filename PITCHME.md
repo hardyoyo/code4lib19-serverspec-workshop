@@ -153,6 +153,7 @@ https://serverspec.org/resource_types.html
 * calling ServerSpec is exactly the same as any other RSpec test
 
 @css[just-code](bundle exec rspec spec)
+or
 @css[just-code](rspec spec)
 
 * this will run all the tests in the spec folder.
