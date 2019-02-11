@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Bree+Serif');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=PT+Mono');
 
 .reveal section img {
     border: 0;
@@ -46,7 +47,11 @@
   margin-top: -10px;
 }
 
+.reveal code {
+  font-family: 'PT Mono', monospace;
+}
+
 .just-code {
-  font-family: monospace;
+  font-family: 'PT Mono', monospace;
   color: green;
 }
