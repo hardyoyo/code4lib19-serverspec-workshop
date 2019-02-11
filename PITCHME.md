@@ -73,7 +73,7 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 # Installing ServerSpec
 * It’s a Ruby gem, you’ll need Ruby 2.0.x+ installed
 @css[just-code](sudo gem install serverspec)
-* You will need Rake installed, too:
+* You will need Rake installed, too:  
 @css[just-code](sudo gem install rake)
 * You will need SSH access to the servers you want to check
 * You will **not** need Sudo on these servers, though Sudo does make things slightly easier
@@ -218,7 +218,7 @@ ServerSpec Components, adapted from ["Introduction to Test-Driven Docker Develop
 ---
 # gotchas
 * you'll need to be sure the `ss` command is available on the test target
-  * this isntalled by default on RHEL
+  * this installed by default on RHEL
   * for Ubuntu, you'll need to install the iproute2 package
 * you'll need to be sure `/usr/sbin` is in the path, if your test target is RHEL
   * you can set the `:path` in spec_helper
