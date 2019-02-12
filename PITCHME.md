@@ -57,7 +57,7 @@ What is Serverspec?
 * Is a great way to get to know your existing services
 
 Note:
-What is ServerSpec? It's an extension of RSpce, which is a common testing framework
+What is ServerSpec? It's an extension of RSpec, which is a common testing framework
 for Ruby. It's also a way to get you to think about your goals before you start
 working with a service. And it's also a way to get to know what you already have.
 Its this last point that I want to focus on today.
