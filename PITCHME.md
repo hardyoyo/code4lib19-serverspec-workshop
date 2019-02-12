@@ -12,29 +12,31 @@ Note:
 Hi, welcome, thanks for coming.
 
 ---
-# We are constantly learning more about our environment
+# We are constantly learning about our environment
 * Developers shop jobs a lot
-* Have you seen the mailing lists?
+* Have you seen the mailing list?
 * We change jobs a lot
 * Our jobs change a lot all on their own
 * @css[just-code](We are always the newbie)
 
 Note:
-More spearker notes here.
+Seriously, have you see the mailing list? And our jobs change all on their own,
+all the time. We are always the newbie.
 
----
-![connections of ideas](assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg)
-
+---?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain
+@snap[north]
+@css[text-black](always the newbie...)
+@snapend
 Note:
-So, here's a story I read a while back, maybe it'll sound familiar? First day, new job your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www1 through www9, and one called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.”
+Here's a story I read a while back. First day, new job your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www-something, and one called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.” Sound familiar?
 
 ---
 # Why write tests?
 ## With ServerSpec or any similar tool?
 * Tests are documentation
-* Your team may or may not survive
-* Provisioning tools come and go
-* No matter what happens to the tools or your team, these tests will persist as documentation of your intentions and proof that the service is configured as you expected
+* Your team may not survive
+* Tools come and go
+* No matter what happens to the tools or your team, tests will persist as documentation of your intentions and proof that the service is configured as you expected
 
 Note:
 ServerSpec is one tool for for testing infrastructure, it's not the only option,
@@ -73,10 +75,10 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 # Installing ServerSpec
 * It’s a Ruby gem, you’ll need Ruby 2.0.x+ installed
 @css[just-code](sudo gem install serverspec)
-* You will need Rake installed, too:
+* Youll need Rake installed, too:
 @css[just-code](sudo gem install rake)
-* You will need SSH access to the servers you want to check
-* You will **not** need Sudo on these servers, though Sudo does make things slightly easier
+* You'll need SSH access to the servers you are testing
+* You'll **not** need Sudo on these servers, though Sudo does make things slightly easier
 
 Note:
 Sudo: I will point out areas where things may get a little dicey if your test logs in as a normal user. It all works, but you have to adjust some tests for unprivileged users.
@@ -148,7 +150,7 @@ https://serverspec.org/resource_types.html
 * cron
 
 ---
-# run the tests
+# Run the tests
 * RSpec tests usually go in a folder called @css[just-code](spec)
 * calling ServerSpec is exactly the same as any other RSpec test
 
@@ -160,14 +162,14 @@ or
 * you can also use a Rakefile to automate more complex tests
 
 
----?terminal=sessions/serverspec_samvera_demo.cast&color=white&title=UCLALibrary/serverspec-samvera
+---?terminal=sessions/serverspec_samvera_demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/serverspec-samvera
 
 ---
-# scaling up to more than one server
+# Scaling up to more than one server
 https://tinyurl.com/uclalibrary-serverspec-samvera
 
 ---
-# spec_helper
+# Spec_helper
 ```
 require 'serverspec'
 require 'pathname'
@@ -211,35 +213,35 @@ your tests.
 https://serverspec.org/advanced_tips.html
 https://tinyurl.com/uclalibrary-serverspec-samvera
 
----
-![ServerSpec Components](assets/images/serverspec_components.jpg)
-ServerSpec Components, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
+---?image=assets/images/serverspec_components.jpg&size=contain
 
 ---
-# gotchas
-* you'll need to be sure the `ss` command is available on the test target
+# Gotchas
+* you'll need to be sure the @css[just-code](ss) command is available on the test target
   * this installed by default on RHEL
-  * for Ubuntu, you'll need to install the iproute2 package
-* you'll need to be sure `/usr/sbin` is in the path, if your test target is RHEL
-  * you can set the `:path` in spec_helper
+  * for Ubuntu, you'll need to install the @css[just-code](iproute2) package
+* you'll need to be sure @css[just-code](/usr/sbin) is in the path, if your test target is RHEL
+  * you can set the @css[just-code](:path) in spec_helper
 
 
 ---
-# containers? Docker?
+# Containers? Docker?
 * many options are available, worth researching
 * DockerSpec: https://github.com/zuazo/dockerspec
 
----?terminal=sessions/docker-cantaloupe-demo.cast&color=white&title=UCLALibrary/docker-cantaloupe
+---?terminal=sessions/docker-cantaloupe-demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/docker-cantaloupe
 
-
+---
+# Credits
+* Story of the newbie (and the inspiration for this talk):
+https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
+* _ServerSpec Components_, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
 
 ---
 # Thanks! Questsions?
 
-Slides: [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
-Credits:
+Slides:
+[github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
 
-Story of the newbie:
-https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
 Note:
 Thanks for coming! Any questions?

@@ -1,7 +1,4 @@
-{"version": 2, "width": 135, "height": 33, "timestamp": 1542835653, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}, "title": "Demo: UCLALib_ServerSpec_Samvera, Ursus environment tests"}
-[0.110264, "o", " _________________________________________\r\n/ You will be recognized and honored as a \\\r\n\\ community leader.                       /\r\n -----------------------------------------\r\n   \\\r\n    \\\r\n        .--.\r\n       |o_o |\r\n       |:_/ |\r\n      //   \\ \\\r\n     (|     | )\r\n    /'\\_   _/`\\\r\n    \\___)=(___/\r\n\r\n"]
-[0.110947, "o", "--\r\n"]
-[0.111631, "o", "Today is Setting Orange, the 33rd day of The Aftermath in the YOLD 3184\r\n"]
+{"version": 2, "width": 120, "height": 20, "timestamp": 1542835653, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}, "title": "Demo: UCLALib_ServerSpec_Samvera, Ursus environment tests"}
 [0.111769, "o", "\r\n"]
 [0.431939, "o", "hpottinger@hpottinger-Galago-Pro:~/workspace/uclalib_serverspec_samvera \u001b[32mmaster\u001b[0m= \u001b[0m|-\u001b[0;31m/ \u001b[0m"]
 [2.836198, "o", "r"]
@@ -85,6 +82,7 @@
 [29.752647, "o", "  SELinux\r\n"]
 [30.010316, "o", "\u001b[32m    should be disabled\u001b[0m\r\n"]
 [30.01123, "o", "\r\nFinished in 13.66 seconds (files took 0.3852 seconds to load)\r\n\u001b[32m29 examples, 0 failures\u001b[0m\r\n\r\n"]
+[30.02123, "o", "\r\n\r\n"]
 [30.061602, "o", "hpottinger@hpottinger-Galago-Pro:~/workspace/uclalib_serverspec_samvera \u001b[32mmaster\u001b[0m= \u001b[0m|-\u001b[0;31m/ \u001b[0m"]
 [31.073604, "o", "rake spec:ursus-dev"]
 [32.056605, "o", "\b\u001b[K"]
@@ -143,6 +141,7 @@
 [48.239389, "o", "  SELinux\r\n"]
 [48.484318, "o", "\u001b[32m    should be disabled\u001b[0m\r\n"]
 [48.485184, "o", "\r\nFinished in 13.85 seconds (files took 0.39902 seconds to load)\r\n\u001b[32m29 examples, 0 failures\u001b[0m\r\n\r\n"]
+[48.485185, "o", "\r\n\r\n"]
 [48.52873, "o", "hpottinger@hpottinger-Galago-Pro:~/workspace/uclalib_serverspec_samvera \u001b[32mmaster\u001b[0m= \u001b[0m|-\u001b[0;31m/ \u001b[0m"]
 [49.437808, "o", "rake spec:ursus-test"]
 [50.716464, "o", "\b\u001b[K"]
@@ -204,6 +203,7 @@
 [66.478537, "o", "  SELinux\r\n"]
 [66.731407, "o", "\u001b[32m    should be disabled\u001b[0m\r\n"]
 [66.732102, "o", "\r\nFinished in 13.4 seconds (files took 0.38268 seconds to load)\r\n\u001b[32m29 examples, 0 failures\u001b[0m\r\n\r\n"]
+[66.732103, "o", "\r\n\r\n"]
 [66.809875, "o", "hpottinger@hpottinger-Galago-Pro:~/workspace/uclalib_serverspec_samvera \u001b[32mmaster\u001b[0m= \u001b[0m|-\u001b[0;31m/ \u001b[0m"]
 [68.985463, "o", "e"]
 [69.221185, "o", "x"]
