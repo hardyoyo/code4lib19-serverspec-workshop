@@ -9,7 +9,7 @@ Digital Library Software Developer, UCLA Library
 @fa[envelope] hpottinger@library.ucla.edu
 
 Note:
-Hi, welcome, thanks for coming.
+Hi, welcome, thanks for coming. The title of this talk is Wait, what? Getting your bearings with ServerSpec, I'm Hardy Pottinger, I'm one of the Digial Library Software Developers at UCLA Library. The main theme of this talk is...
 
 ---
 # We are constantly learning about our environment
@@ -20,8 +20,7 @@ Hi, welcome, thanks for coming.
 * @css[just-code](We are always the newbie)
 
 Note:
-Seriously, have you see the mailing list? And our jobs change all on their own,
-all the time. We are always the newbie.
+We are constantly learning about our environment. Seriously, have you see the mailing list? And our jobs change all on their own, all the time. We are always the newbie.
 
 ---?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain
 @snap[north]
@@ -39,9 +38,14 @@ Here's a story I read a while back. First day, new job your trainer has been giv
 * No matter what happens to the tools or your team, tests will persist as documentation of your intentions and proof that the service is configured as you expected
 
 Note:
-ServerSpec is one tool for for testing infrastructure, it's not the only option,
-but it's common enough that if you're looking to write an infrastructure test
-you should consider using it.
+Why write tests? How can that possibly help in this situation? And why use ServerSpec?
+Well, honestly, ServerSpec is just one tool for for testing infrastructure,
+it's not the only option, but it's common enough that if you're looking to write
+an infrastructure test you should consider using it. As to why, tests are
+documentation. And let's be honest, your team may not survive the next re-org.
+Tools come and go. But if you write tests in ServerSpec, your tests will remain
+accessible to anyone reading the code. I'll show you what I mean in a bit. But
+first...
 
 What is Serverspec?
 
@@ -53,9 +57,10 @@ What is Serverspec?
 * Is a great way to get to know your existing services
 
 Note:
-It's this last bullet that I want to focus on today. TDD is cool and I will point
-out ways you can incorporate TDD to learn ServerSpec. But, the focus will be less
-on creating new things and more on figuring out what has already been built.
+What is ServerSpec? It's an extension of RSpce, which is a common testing framework
+for Ruby. It's also a way to get you to think about your goals before you start
+working with a service. And it's also a way to get to know what you already have.
+Its this last point that I want to focus on today.
 
 ---
 # Software Reuse
