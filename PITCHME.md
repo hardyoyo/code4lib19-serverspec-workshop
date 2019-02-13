@@ -22,6 +22,13 @@ Hi, welcome. The title of this talk is Wait, what? Getting your bearings with Se
 Note:
 We are constantly learning about our environment. Seriously, have you see the mailing list? And our jobs change all on their own, all the time. We are always the newbie.
 
++++?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain	
+@snap[north]
+@css[text-black](always the newbie...)
+@snapend
+Note:
+Here's a story I read a while back. First day, new job, your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www-something, and one is called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.” Sound familiar? Here's something you can do to make sense of all that stuff.
+
 ---
 # Why write tests?
 ## With ServerSpec or any similar tool?
@@ -281,7 +288,7 @@ Note:
 
 ---
 # Credits
-* Story of the newbie (and the inspiration for this talk):
+* Inspiration for this talk: JJ Asghar's /Rants and Ramblings blog post on ServerSpec:
 https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
 * _ServerSpec Components_, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
 
