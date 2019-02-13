@@ -83,7 +83,7 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 * Youll need Rake installed, too:
 @css[just-code](sudo gem install rake)
 * You'll need SSH access to the servers you are testing
-* You'll **not** need Sudo on these servers, though Sudo does make things slightly easier
+* Sudo not required, but it's nice to have
 
 Note:
 Yep, it's Ruby, and of course it's packaged as a gem. And you'll need Rake.
