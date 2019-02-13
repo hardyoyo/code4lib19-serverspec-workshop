@@ -9,7 +9,7 @@ Digital Library Software Developer, UCLA Library
 @fa[envelope] hpottinger@library.ucla.edu
 
 Note:
-Hi, welcome, thanks for coming. The title of this talk is Wait, what? Getting your bearings with ServerSpec, I'm Hardy Pottinger, I'm one of the Digial Library Software Developers at UCLA Library. The main theme of this talk is...
+Hi, welcome. The title of this talk is Wait, what? Getting your bearings with ServerSpec, I'm Hardy Pottinger, I'm one of the Digial Library Software Developers at UCLA Library. Before we even get into testing or "spec"-anything, here's a thing I know...
 
 ---
 # We are constantly learning about our environment
@@ -27,7 +27,7 @@ We are constantly learning about our environment. Seriously, have you see the ma
 @css[text-black](always the newbie...)
 @snapend
 Note:
-Here's a story I read a while back. First day, new job your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www-something, and one called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.” Sound familiar?
+Here's a story I read a while back. First day, new job, your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www-something, and one is called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.” Sound familiar? Here's something you can do to make sense of all that stuff.
 
 ---
 # Why write tests?
@@ -60,7 +60,7 @@ Note:
 What is ServerSpec? It's an extension of RSpec, which is a common testing framework
 for Ruby. It's also a way to get you to think about your goals before you start
 working with a service. And it's also a way to get to know what you already have.
-Its this last point that I want to focus on today.
+Its this last point that I want to focus on today. Before we get too much further...
 
 ---
 # Software Reuse
@@ -71,8 +71,8 @@ Its this last point that I want to focus on today.
 * SpecInfra
 * ¯\\_(ツ)_/¯
 Note:
-Just to give you a heads up, you'll hear me mention a few different words with
-"spec" in them, I will eventually show you an image that explains how most
+...just to give you a heads up, you'll hear me mention a few different words with
+"spec" in them. I will eventually show you an image that explains how most
 of them interrelate, however, it's way too much detail right now. Just trust me,
 this is normal Ruby stuff. Basic software reuse. Cool?
 
@@ -86,7 +86,11 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 * You'll **not** need Sudo on these servers, though Sudo does make things slightly easier
 
 Note:
-Sudo: I will point out areas where things may get a little dicey if your test logs in as a normal user. It all works, but you have to adjust some tests for unprivileged users.
+Yep, it's Ruby, and of course it's packaged as a gem. And you'll need Rake.
+Sudo: I will point out areas where things may get a little dicey if your test
+logs in as a normal user. It all works, but you have to adjust some tests for
+unprivileged users. Mostly just on RedHat, but, too many details.
+
 After you install ServerSpec, you can start off with the serverspec-init command.
 
 ---
@@ -110,6 +114,13 @@ Input target host name: waitwat
  + .rspec
 ```
 @[14](let's look at this sample_spec.rb)
+
+Note:
+so, you type in serverspec-init and you will answer a few questions, pick your
+OS, select a backend type, admit to using Vagrant, enter your host name. And
+boom, you get a nice set of files, your basic ServerSpec starter kit. Let's look
+at the sample_spec.rb file.
+
 ---
 ```
 require 'spec_helper'
@@ -142,7 +153,10 @@ If you've worked with Rails before, you've seen a "helper", it's a way to pull
 out some complexity to improve the readability of your code. For ServerSpec,
 it helps improve the readability of your tests. The gist is: don't forget about
 this file... you'll probably need to dig into it to make things work. But we will
-skip it for now. Instead, let's look at all the other pieces we get.
+skip it for now. Instead, let's look at all the other pieces we get. Each of these
+other sections are what are called Resources. In the sameple, we have a package
+resource, a service resource, a port resource and a file resource. And the tests
+are pretty clear about what they expect, right?
 ---
 # Resources
 https://serverspec.org/resource_types.html
@@ -154,6 +168,14 @@ https://serverspec.org/resource_types.html
 * users and groups
 * cron
 
+Note:
+Of course there are many more resources available to use. I will admit, every
+time I look at this page I get excited: I notice something I've never used
+before, or want to try again. So many possible tests to try. I'll admit it
+I'm pretty smitten with ServerSpec.
+
+OK, so, that's what the tests look like and how to find out more about the kinds
+of tests you can write, what does running a test look like?
 ---
 # Run the tests
 * RSpec tests usually go in a folder called @css[just-code](spec)
@@ -164,14 +186,31 @@ or
 @css[just-code](rspec spec)
 
 * this will run all the tests in the spec folder.
+* or @css[just-code](spec/ask/for/whichever/spec.rb) you want
 * you can also use a Rakefile to automate more complex tests
 
+Note:
+You might remember our sample test was put in a spec folder. That's normal
+RSpec practice. Calling the tests is the same as any other RSpec test, either
+run it through bundle, or call the rspec command, and give it a path. If you
+ask for a folder, all the tests in the folder are run. If you give it a path
+to a specific file, just the test in that file will be run. Or if your tests
+are intricate or complicated, you can use a Rakefile to organize everything
+for you. Which is what I did for a collection of tests I wrote to verify our
+Samvera servers. So you'll see in this demo I'm using rake to call the tests,
+I'll link to the code and will explain more about how all this works in a moment,
+but let's watch the tests run, first.
 
 ---?terminal=sessions/serverspec_samvera_demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/serverspec-samvera
 
 ---
 # Scaling up to more than one server
 https://tinyurl.com/uclalibrary-serverspec-samvera
+
+Note:
+Here's a link to the tests that I just ran in that demo. I used a Spec_helper
+to add the ability to include shared libraries of test code. More about that
+in a few slides. But let's just peek at the code.
 
 ---
 # Spec_helper
@@ -213,12 +252,19 @@ your tests.
 * Similar to Make
 * Written in Ruby
 
+Note:
+
+
 ---
 # sharing code
 https://serverspec.org/advanced_tips.html
 https://tinyurl.com/uclalibrary-serverspec-samvera
 
+Note:
+
 ---?image=assets/images/serverspec_components.jpg&size=contain
+
+Note:
 
 ---
 # Gotchas
@@ -228,11 +274,15 @@ https://tinyurl.com/uclalibrary-serverspec-samvera
 * you'll need to be sure @css[just-code](/usr/sbin) is in the path, if your test target is RHEL
   * you can set the @css[just-code](:path) in spec_helper
 
+Note:
+
 
 ---
 # Containers? Docker?
 * many options are available, worth researching
 * DockerSpec: https://github.com/zuazo/dockerspec
+
+Note:
 
 ---?terminal=sessions/docker-cantaloupe-demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/docker-cantaloupe
 
@@ -242,6 +292,9 @@ https://tinyurl.com/uclalibrary-serverspec-samvera
 https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
 * _ServerSpec Components_, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
 
+Note:
+
+
 ---
 # Thanks! Questions?
 
@@ -249,4 +302,4 @@ Slides:
 [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
 
 Note:
-Thanks for coming! Any questions?
+That's all I've got. Thanks for putting up with me! Any questions?
