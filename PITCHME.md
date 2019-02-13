@@ -9,7 +9,9 @@ Digital Library Software Developer, UCLA Library
 @fa[envelope] hpottinger@library.ucla.edu
 
 Note:
-Hi, welcome. The title of this talk is Wait, what? Getting your bearings with ServerSpec, I'm Hardy Pottinger, I'm one of the Digial Library Software Developers at UCLA Library. Before we even get into testing or "spec"-anything, here's a thing I know...
+Hi. I'm Hardy Pottinger, I'm a developer at UCLA Library. This talk is about ServerSpec.
+
+Here's a thing I know...
 
 ---
 # We are constantly learning about our environment
@@ -20,14 +22,7 @@ Hi, welcome. The title of this talk is Wait, what? Getting your bearings with Se
 * @css[just-code](We are always the newbie)
 
 Note:
-We are constantly learning about our environment. Seriously, have you see the mailing list? And our jobs change all on their own, all the time. We are always the newbie.
-
-+++?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain
-@snap[north]
-@css[text-black](always the newbie...)
-@snapend
-Note:
-Here's a story I read a while back. First day, new job, your trainer has been giving you notes all day, and then they go, “Ok, lets walk through each machine. There are 10 web servers, 9 of them are called www-something, and one is called paco.” You quickly grab a piece of paper, “Paco?”, “Yep the admin before you didn’t like standard names, wanted to give machines ‘personality’, so we have that one off.” Sound familiar? Here's something you can do to make sense of all that stuff.
+We are constantly learning. Heh, mailing list. And our jobs change all the time. We are always the newbie.
 
 ---
 # Why write tests?
@@ -38,29 +33,19 @@ Here's a story I read a while back. First day, new job, your trainer has been gi
 * No matter what happens to the tools or your team, tests will persist as documentation of your intentions and proof that the service is configured as you expected
 
 Note:
-Why write tests? How can that possibly help in this situation? And why use ServerSpec?
-Well, honestly, ServerSpec is just one tool for for testing infrastructure,
-it's not the only option, but it's common enough that if you're looking to write
-an infrastructure test you should consider using it. As to why, tests are
-documentation. And let's be honest, your team may not survive the next re-org.
-Tools come and go. But if you write tests in ServerSpec, your tests will remain
-accessible to anyone reading the code. I'll show you what I mean in a bit. But
-first...
-
-What is Serverspec?
+How can tests possibly help? And why ServerSpec?
+Well, honestly, it's one option. Tests are documentation. Your team may not
+survive. Tools come and go. But if you write tests in ServerSpec, your tests will
+remain accessible to anyone reading the code. I'll show you.
 
 ---
 # ServerSpec
 * Extension of RSpec
 * Is a Ruby gem
-* Is a great way to force yourself to think about your intentions before you provision a new service
-* Is a great way to get to know your existing services
 
 Note:
-What is ServerSpec? It's an extension of RSpec, which is a common testing framework
-for Ruby. It's also a way to get you to think about your goals before you start
-working with a service. And it's also a way to get to know what you already have.
-Its this last point that I want to focus on today. Before we get too much further...
+ServerSpec is an extension of RSpec, which is a testing framework
+for Ruby. Before we get too much further...
 
 ---
 # Software Reuse
@@ -71,10 +56,9 @@ Its this last point that I want to focus on today. Before we get too much furthe
 * SpecInfra
 * ¯\\_(ツ)_/¯
 Note:
-...just to give you a heads up, you'll hear me mention a few different words with
-"spec" in them. I will eventually show you an image that explains how most
-of them interrelate, however, it's way too much detail right now. Just trust me,
-this is normal Ruby stuff. Basic software reuse. Cool?
+...you'll hear me mention a few different words with "spec" in them. There will
+be a diagram, but it's too much detail right now. This is normal Ruby stuff.
+Software reuse.
 
 ---
 # Installing ServerSpec
@@ -86,12 +70,9 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 * Sudo not required, but it makes life easier
 
 Note:
-Yep, it's Ruby, and of course it's packaged as a gem. And you'll need Rake.
-Sudo: I will point out areas where things may get a little dicey if your test
-logs in as a normal user. It all works, but you have to adjust some tests for
-unprivileged users. Mostly just on RedHat, but, too many details.
+Yep, it's Ruby, and you'll need Rake. Sudo helps, but it's not required.
 
-After you install ServerSpec, you can start off with the serverspec-init command.
+It does have an init command, which can get you started.
 
 ---
 ```
@@ -116,10 +97,9 @@ Input target host name: waitwat
 @[14](let's look at this sample_spec.rb)
 
 Note:
-so, you type in serverspec-init and you will answer a few questions, pick your
-OS, select a backend type, admit to using Vagrant, enter your host name. And
-boom, you get a nice set of files, your basic ServerSpec starter kit. Let's look
-at the sample_spec.rb file.
+So, you type in serverspec-init and answer a few questions, pick your OS, select
+a backend type, blah blah bla. And boom, you get a nice set of files, a basic
+starter kit. Let's look at the sample_spec file.
 
 ---
 ```
@@ -149,14 +129,13 @@ end
 @[15-18](file resource)
 
 Note:
-If you've worked with Rails before, you've seen a "helper", it's a way to pull
-out some complexity to improve the readability of your code. For ServerSpec,
-it helps improve the readability of your tests. The gist is: don't forget about
-this file... you'll probably need to dig into it to make things work. But we will
-skip it for now. Instead, let's look at all the other pieces we get. Each of these
-other sections are what are called Resources. In the sameple, we have a package
-resource, a service resource, a port resource and a file resource. And the tests
-are pretty clear about what they expect, right?
+You've seen Rails, you've seen a "helper", it's a way to pull out some
+complexity to improve the readability of your code. For ServerSpec, it helps
+improve the readability of your tests. Skip it for now, instead, let's look at
+all the other pieces we get. Each of these other sections are what are called
+Resources. In the sample, we have a package resource, a service resource, a
+port resource and a file resource. And the tests are pretty clear about what
+they expect, right? It should be a file, it should contain something.
 ---
 # Resources
 https://serverspec.org/resource_types.html
@@ -169,13 +148,10 @@ https://serverspec.org/resource_types.html
 * cron
 
 Note:
-Of course there are many more resources available to use. I will admit, every
-time I look at this page I get excited: I notice something I've never used
-before, or want to try again. So many possible tests to try. I'll admit it
-I'm pretty smitten with ServerSpec.
+Of course there are many more resources. Every time I look at this page I notice
+something I've never used before, or want to try again.
 
-OK, so, that's what the tests look like and how to find out more about the kinds
-of tests you can write, what does running a test look like?
+OK, so, that's what the tests look like, what about running them?
 ---
 # Run the tests
 * RSpec tests usually go in a folder called @css[just-code](spec)
@@ -188,17 +164,10 @@ of tests you can write, what does running a test look like?
 * you can also use a Rakefile to automate more complex tests
 
 Note:
-You might remember our sample test was put in a spec folder. That's normal
-RSpec practice. Calling the tests is the same as any other RSpec test, either
-run it through bundle, or call the rspec command, and give it a path. If you
-ask for a folder, all the tests in the folder are run. If you give it a path
-to a specific file, just the test in that file will be run. Or if your tests
-are intricate or complicated, you can use a Rakefile to organize everything
-for you. Which is what I did for a collection of tests I wrote to verify our
-Samvera servers. So you'll see in this demo I'm using rake to call the tests,
-I'll link to the code and will explain more about how all this works in a moment,
-but let's watch the tests run, first.
-
+Normal RSpec practice puts the tests in a spec folder. You run them with the
+rspec command. Give it a path to a specific file, just that file will be run.
+Or a folder, all the tests in the folder will run. Or you can get fancy with a
+Rakefile. Here, I'll show you a demo.
 ---?terminal=sessions/serverspec_samvera_demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/serverspec-samvera
 
 ---
@@ -207,8 +176,8 @@ https://tinyurl.com/uclalibrary-serverspec-samvera
 
 Note:
 Here's a link to the tests that I just ran in that demo. I used a Spec_helper
-to add the ability to include shared libraries of test code. More about that
-in a few slides. But let's just peek at the code.
+to add the ability to include shared libraries of test code. But let's just peek
+at the code.
 
 ---
 # Spec_helper
@@ -241,7 +210,8 @@ set_property properties[host]
 Note:
 The spec_helper file is a way to pull out some complexity to improve the
 readability of your code. For ServerSpec, it helps improve the readability of
-your tests.
+your tests. I'll skip the details, there are links in the slides. The other
+piece of this is a Rakefile.
 
 ---
 # Use a Rakefile
@@ -251,7 +221,8 @@ your tests.
 * Written in Ruby
 
 Note:
-
+You know, it's kinda like Make, it lets you put together smaller pieces
+into a whole.
 
 ---
 # sharing code
@@ -259,10 +230,15 @@ https://serverspec.org/advanced_tips.html
 https://tinyurl.com/uclalibrary-serverspec-samvera
 
 Note:
+Here's the code for that demo. And a link to the documentation that inspired it.
+I promised a diagram of all this stuff, here's one I found.
 
 ---?image=assets/images/serverspec_components.jpg&size=contain
 
 Note:
+It's all an extension of RSpec. ServerSpec sits on top of another gem called
+SpecInfra. SpecInfra handles all the specific calls to whatever kind of thing
+you are testing. This is important if you find a bug.
 
 ---
 # Gotchas
@@ -273,7 +249,13 @@ Note:
   * you can set the @css[just-code](:path) in spec_helper
 
 Note:
-
+Some gotchas I know about. You'll need the ss command, it's like netstat but not
+deprecated. It's included on Redhat, you'll need to install iproute2 on Ubuntu.
+And sbin needs to be in your path, Ubuntu does that, but RH doesn't. You can set
+the path in the spec_helper. The big one is that most of these tools
+are run by a single developer. And he has issues turned off in GitHub. So, it'll
+be up to you to at least suggest a fix for any bug you find, and make a pull
+request.
 
 ---
 # Containers? Docker?
@@ -281,23 +263,19 @@ Note:
 * DockerSpec: https://github.com/zuazo/dockerspec
 
 Note:
+What about containers? Docker? There are options, and fun reading. I recommend
+DockerSpec, here, let me show you a demo.
 
 ---?terminal=sessions/docker-cantaloupe-demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/docker-cantaloupe
 
 ---
-# Credits
+# Credits/Links/Thanks
 * Inspiration for this talk: JJ Asghar's /Rants and Ramblings blog post on ServerSpec:
 https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-and-audit-your-infrastructure/
 * _ServerSpec Components_, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
-
-Note:
-
-
----
-# Thanks! Questions?
 
 Slides:
 [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
 
 Note:
-That's all I've got. Thanks for putting up with me! Any questions?
+Credits, links in the slides. Thanks!
