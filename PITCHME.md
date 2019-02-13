@@ -243,7 +243,7 @@ https://jjasghar.github.io/blog/2013/07/12/serverspec-the-new-best-way-to-learn-
 * _ServerSpec Components_, adapted from ["Introduction to Test-Driven Docker Development,"](https://entwickler.de/online/development/docker-test-driven-development-b-170207.html) by Peter Roßbach,  Wednesday, August 12, 2015, [Entwickler.de](https://entwickler.de/)
 
 ---
-# Thanks! Questsions?
+# Thanks! Questions?
 
 Slides:
 [github.com/hardyoyo/code4lib19-serverspec-workshop](https://github.com/hardyoyo/code4lib19-serverspec-workshop)
