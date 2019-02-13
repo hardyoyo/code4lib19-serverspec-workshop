@@ -22,7 +22,7 @@ Hi, welcome. The title of this talk is Wait, what? Getting your bearings with Se
 Note:
 We are constantly learning about our environment. Seriously, have you see the mailing list? And our jobs change all on their own, all the time. We are always the newbie.
 
-+++?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain	
++++?image=assets/images/_absolutely_free_photos_original_photos_connection-of-ideas-3600x2542_26127.jpg&size=contain
 @snap[north]
 @css[text-black](always the newbie...)
 @snapend
@@ -78,12 +78,12 @@ this is normal Ruby stuff. Basic software reuse. Cool?
 
 ---
 # Installing ServerSpec
-* It’s a Ruby gem, you’ll need Ruby 2.0.x+ installed
+* It's a Ruby gem, you'll need Ruby 2.0.x+ installed
 @css[just-code](sudo gem install serverspec)
-* Youll need Rake installed, too:
+* Rake, too:
 @css[just-code](sudo gem install rake)
-* You'll need SSH access to the servers you are testing
-* Sudo not required, but it's nice to have
+* SSH access to the servers you are testing
+* Sudo not required, but it makes life easier
 
 Note:
 Yep, it's Ruby, and of course it's packaged as a gem. And you'll need Rake.
@@ -181,11 +181,9 @@ of tests you can write, what does running a test look like?
 * RSpec tests usually go in a folder called @css[just-code](spec)
 * calling ServerSpec is exactly the same as any other RSpec test
 
-@css[just-code](bundle exec rspec spec)
-or
 @css[just-code](rspec spec)
 
-* this will run all the tests in the spec folder.
+* this will run all the tests in the spec folder
 * or @css[just-code](spec/ask/for/whichever/spec.rb) you want
 * you can also use a Rakefile to automate more complex tests
 
