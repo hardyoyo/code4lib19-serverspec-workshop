@@ -168,7 +168,7 @@ Normal RSpec practice puts the tests in a spec folder. You run them with the
 rspec command. Give it a path to a specific file, just that file will be run.
 Or a folder, all the tests in the folder will run. Or you can get fancy with a
 Rakefile. Here, I'll show you a demo.
----?terminal=sessions/serverspec_samvera_demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/serverspec-samvera
+---?terminal=sessions/serverspec_samvera_demo.cast&theme=monokai&font=14px&color=#000&autoplay=true&speed=2&title=github.com/UCLALibrary/serverspec-samvera
 
 ---
 # Scaling up to more than one server
@@ -266,7 +266,7 @@ Note:
 What about containers? Docker? There are options, and fun reading. I recommend
 DockerSpec, here, let me show you a demo.
 
----?terminal=sessions/docker-cantaloupe-demo.cast&theme=monokai&font=14px&color=#000&title=github.com/UCLALibrary/docker-cantaloupe
+---?terminal=sessions/docker-cantaloupe-demo.cast&theme=monokai&font=14px&color=#000&autoplay=true&speed=2&title=github.com/UCLALibrary/docker-cantaloupe
 
 ---
 # Credits/Links/Thanks
