@@ -1,6 +1,12 @@
 # Wait, what? Getting your bearings with ServerSpec
 ## Preconference Workshop, Code4Lib 2019, San Jose, CA
 
+---
+NOTE: this workshop was cancelled due to space constraints.
+I delivered a revised version of this material as a lightning talk, and those
+slides can be found here: https://github.com/hardyoyo/code4lib19-serverspec-talk
+---
+
 Abstract: Library developers change jobs, we’re always the newbie.
 [ServerSpec](https://serverspec.org/) is a fantastic tool for keeping track of
 exactly what is supposed to be running on which server. Chances are such tests
